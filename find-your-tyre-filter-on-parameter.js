@@ -1,13 +1,17 @@
-/*!
- * Product Filter Script v1.0
+/**
+ * Feature: URL-based Product Filtering for Webflow CMS
+ * Description: Dynamically filters product list based on query parameters (category, equipment, rim, size, pattern).
  * Author: Deepu Singh
- * Description: Filters products on the products page based on URL query parameters (category, equipment, rim, size, pattern).
- * Requirements:
- *   - Each product should have a `.product-data` element inside a `.collection-list-item`.
- *   - Attributes required: data-category, data-equipment, data-rim, data-size, data-pattern.
- *   - A `#no-results-message` element to show when no products match the filter.
- * Dependencies: None (pure JavaScript, no external libraries required)
- * Version: 1.0
+ * Version: 1.1.0
+ *
+ * Use: Add query parameters in the URL (e.g. ?category=car&size=16) to auto-filter product cards on page load.
+ * Location: Webflow "Products" page where all tyre products are listed (typically /products or /tyres).
+ *
+ * Notes:
+ * - Requires each CMS item to have a `.product-data` element with data-category, data-equipment, data-rim, data-size, and data-pattern attributes.
+ * - Each `.product-data` should be wrapped inside a `.collection-list-item` element.
+ * - Displays the #no-results-message element if no products match.
+ * - Uses a 200ms delay to wait for CMS content rendering (Webflow-specific behavior).
  */
 
 (function () {
